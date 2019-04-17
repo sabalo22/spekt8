@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: spekt8
+  namespace: test
 spec:
   selector:
     matchLabels:
@@ -14,6 +15,6 @@ spec:
     spec:
       containers:
         - name: spekt8
-          image: elliotxkim/spekt8
+          image: sabalo22/spekt8
           ports:
             - containerPort: 3000

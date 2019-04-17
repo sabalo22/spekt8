@@ -42,7 +42,7 @@ app.get('/main.js', (req, res) => {
 });
 
 app.get('/pod', (req, res) => {
-  k8sApi.listNamespacedPod('test')
+  k8sApi.listNamespacedPod('stage-apis')
     .then((re) => {
       return res.status(200).json(re.body);
     })
@@ -62,7 +62,7 @@ app.get('/service', (req, res) => {
 });
 
 app.get('/ingress', (req, res) => {
-  k8sApi2.listNamespacedIngress('test')
+  k8sApi2.listNamespacedIngress('stage-apis')
     .then((re) => {
       return res.status(200).json(re.body);
     })
@@ -72,7 +72,7 @@ app.get('/ingress', (req, res) => {
 });
 
 app.get('/deployment', (req, res) => {
-  k8sApi2.listNamespacedDeployment('test')
+  k8sApi2.listNamespacedDeployment('stage-apis')
     .then((re) => {
       return res.status(200).json(re.body);
     })
@@ -82,7 +82,7 @@ app.get('/deployment', (req, res) => {
 });
 
 app.get('/daemonset', (req, res) => {
-  k8sApi2.listNamespacedDaemonSet('test')
+  k8sApi2.listNamespacedDaemonSet('stage-apis')
     .then((re) => {
       res.json(re.body);
     });
